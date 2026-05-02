@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay Sriram | Engineering Portfolio</title>
+    <meta name="description" content="Sanjay Sriram's Minimalist Engineering Portfolio. Building agents, RAG pipelines, and ML systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="nav-wrapper">
+        <div class="nav container">
+            <div class="nav-brand">Sanjay Sriram</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#experience">WORK</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+                <button class="nav-btn">···</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <header class="hero">
+            <div class="hero-left">
+                <h1 class="hero-text-main">
+                    SAN<br>
+                    JAY
+                </h1>
+                <div class="hero-details">
+                    <p class="hero-subtitle">APPLIED ML ENGINEER &nbsp;·&nbsp; CS/CE PURDUE &nbsp;·&nbsp; BUILDING AI THAT SHIPS</p>
+                    <p class="hero-desc">I build production AI systems — agents, RAG pipelines,<br>and the infrastructure underneath them. Currently at<br>Rox.</p>
+                    <a href="#experience" class="hero-link">VIEW WORK &darr;</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="vertical-text">SRIRAM</div>
+            </div>
+        </header>
+
+        <section id="experience" class="section">
+            <div class="section-header">
+                <h2 class="section-title">EXPERIENCE</h2>
+                <span class="section-count">03</span>
+            </div>
+            <div class="experience-list">
+                <!-- Exp 1 -->
+                <div class="experience-item">
+                    <div class="exp-year">2026</div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3 class="exp-company">Rox</h3>
+                            <span class="exp-badge">CURRENT</span>
+                        </div>
+                        <p class="exp-role">ENGINEERING INTERN</p>
+                        <p class="exp-desc">Building agents at a revenue intelligence startup. Working on the systems that power autonomous outbound — agent orchestration, context retrieval, and real-time execution pipelines that operate without human-in-the-loop.</p>
+                        <div class="exp-tags">
+                            <span class="tag">Agents</span>
+                            <span class="tag">LLMs</span>
+                            <span class="tag">Revenue AI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exp 2 -->
+                <div class="experience-item">
+                    <div class="exp-year">2025</div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3 class="exp-company">Ernst & Young</h3>
+                            <span class="exp-badge">EY</span>
+                        </div>
+                        <p class="exp-role">APPLIED ML INTERN</p>
+                        <p class="exp-desc">Architected production LLM systems at enterprise scale. Built a containerized MCP server with LangGraph to generate architecture diagrams in near real-time. Designed a hybrid RAG system (BM25 + dense vector) that cut critical process turnaround from days to under an hour. Shipped an autonomous document extraction agent for fragmented tax and tariff data.</p>
+                        <div class="exp-tags">
+                            <span class="tag">LangGraph</span>
+                            <span class="tag">Hybrid RAG</span>
+                            <span class="tag">MCP</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">BM25</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 3 -->
+                <div class="experience-item">
+                    <div class="exp-year">2025</div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3 class="exp-company">Boxsy.io</h3>
+                            <span class="exp-badge">BOXSY</span>
+                        </div>
+                        <p class="exp-role">APPLIED AI SUB-TEAM LEAD</p>
+                        <p class="exp-desc">Led design and deployment of an AI Investor Update Agent — LLM-powered, context-aware, reducing manual drafting by 70%. Built end-to-end similarity search and personalization pipelines using pgvector and hybrid retrieval. Defined AI workflows on Vertex AI, integrated with FastAPI and Next.js for real-time delivery.</p>
+                        <div class="exp-tags">
+                            <span class="tag">pgvector</span>
+                            <span class="tag">Vertex AI</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Next.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="section-header">
+                <h2 class="section-title">PROJECTS</h2>
+                <span class="section-count">06</span>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-card-top">
+                        <div class="project-index">01</div>
+                        <h3 class="project-title">Sift</h3>
+                        <p class="project-subtitle">MULTIMODAL LOCAL SEARCH ENGINE</p>
+                        <p class="project-desc">High-performance local retrieval engine for instant semantic search across text, images, audio, and video. Backbone is Qwen3-VL-Embedding-2B mapping all modalities into a unified 2048-dim vector space. Audio handled via a CLAP-to-Qwen adapter — a learned 2-layer MLP trained with contrastive InfoNCE loss on AudioSetCaps. Filesystem watchdog daemon auto-indexes files using BLAKE3 change detection. Results bundled via hybrid scoring: embedding similarity + temporal proximity + filename Jaccard.</p>
+                    </div>
+                    <div class="project-card-bottom">
+                        <div class="project-tags">
+                            <span class="tag">Qwen3-VL</span>
+                            <span class="tag">CLAP</span>
+                            <span class="tag">Qdrant</span>
+                            <span class="tag">Whisper</span>
+                            <span class="tag">InfoNCE</span>
+                            <span class="tag">PySide6</span>
+                        </div>
+                        <a href="https://github.com/akkshay0107/sift" target="_blank" class="project-link">GITHUB ↗</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-card-top">
+                        <div class="project-index">02</div>
+                        <h3 class="project-title">KernelFusion</h3>
+                        <p class="project-subtitle">CUSTOM CUDA + TRITON BENCHMARKING</p>
+                        <p class="project-desc">GPU kernel fusion study — fusing element-wise Add + ReLU into a single kernel to eliminate the global memory round-trip between operations. Benchmarked custom CUDA, Triton, and torch.compile on NVIDIA Nsight Systems. Key finding: torch.compile via Triton reads inputs once into SRAM, computes add+clamp, writes once to VRAM — rivaling hand-written CUDA while bypassing the memory bandwidth bottleneck entirely.</p>
+                    </div>
+                    <div class="project-card-bottom">
+                        <div class="project-tags">
+                            <span class="tag">CUDA</span>
+                            <span class="tag">Triton</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Nsight</span>
+                            <span class="tag">torch.compile</span>
+                        </div>
+                        <a href="https://github.com/sanjayriram44/KernelFusion" target="_blank" class="project-link">GITHUB ↗</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-card-top">
+                        <div class="project-index">03</div>
+                        <h3 class="project-title">LPCVC 2026</h3>
+                        <p class="project-subtitle">EDGE VISION-LANGUAGE RETRIEVAL · IN PROGRESS</p>
+                        <div class="exp-badge project-badge">COMPETITION · IN PROGRESS</div>
+                        <p class="project-desc">Entry for the 2026 Low-Power Computer Vision Challenge (Track 1: Open-World Image-to-Text Retrieval). Hard constraint: combined image + text encoder latency under 35ms on Qualcomm XR2 Gen 2. Architecture: MobileCLIP-S2 (Apple CVPR 2024, 63.7% accuracy across 38 zero-shot benchmarks). 3-stage pipeline: COCO contrastive warmup → attribute-discriminative fine-tuning on RefCOCO + Visual Genome with hard negative mining → WiSE-FT weight interpolation. Quantized to INT8 via AIMET PTQ and compiled for Qualcomm AI Hub.</p>
+                    </div>
+                    <div class="project-card-bottom">
+                        <div class="project-tags">
+                            <span class="tag">MobileCLIP</span>
+                            <span class="tag">AIMET INT8</span>
+                            <span class="tag">Qualcomm AI Hub</span>
+                            <span class="tag">WiSE-FT</span>
+                            <span class="tag">InfoNCE</span>
+                            <span class="tag">ONNX</span>
+                        </div>
+                        <a href="https://lpcv.ai/2026LPCVC" target="_blank" class="project-link">LPCV.AI/2026LPCVC ↗</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-card-top">
+                        <div class="project-index">04</div>
+                        <h3 class="project-title">Outsync</h3>
+                        <p class="project-subtitle">AGENTIC OUTREACH EMAIL GENERATION</p>
+                        <p class="project-desc">LangGraph multi-step agent that generates personalized academic outreach emails grounded in your actual resume. Pipeline: scrape professor URLs → RAG over resume chunks (ChromaDB + sentence-transformers) → draft → structured refinement pass. Multi-step workflows consistently outperform single-prompt generation — Outsync was built around that principle. Deployed on Vercel + Render with Google OAuth.</p>
+                    </div>
+                    <div class="project-card-bottom">
+                        <div class="project-tags">
+                            <span class="tag">LangGraph</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">ChromaDB</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Gemini</span>
+                        </div>
+                        <a href="https://github.com/sanjayriram44/Outsync" target="_blank" class="project-link">GITHUB ↗</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-card-top">
+                        <div class="project-index">05</div>
+                        <h3 class="project-title">Glimpse</h3>
+                        <p class="project-subtitle">AI NEWSLETTER DIGEST SAAS</p>
+                        <p class="project-desc">Full-stack SaaS that ingests Gmail newsletters and delivers a single AI-generated daily digest with audio playback. Celery orchestrates parallel summarization — multiple newsletters processed concurrently, then synthesized into a cohesive narrative. Shipped with ElevenLabs TTS, daily email delivery, and 23+ production deploys on Vercel.</p>
+                    </div>
+                    <div class="project-card-bottom">
+                        <div class="project-tags">
+                            <span class="tag">Gemini</span>
+                            <span class="tag">Celery</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">ElevenLabs</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Redis</span>
+                        </div>
+                        <a href="https://github.com/sanjayriram44/glimpse" target="_blank" class="project-link">GITHUB ↗</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-card-top">
+                        <div class="project-index">06</div>
+                        <h3 class="project-title">Backtest Engine</h3>
+                        <p class="project-subtitle">MODULAR TRADING STRATEGY FRAMEWORK</p>
+                        <p class="project-desc">Modular backtesting engine for testing trading strategies on historical equity data. Configurable execution model with market and limit orders, static and dynamic slippage (market-impact based on dollar volume), and multi-asset support via OpenBB. Performance analytics include Sharpe, Sortino, Max Drawdown, and annualized return. Streamlit UI for one-click strategy configuration and metric display.</p>
+                    </div>
+                    <div class="project-card-bottom">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">OpenBB</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">NumPy</span>
+                        </div>
+                        <a href="https://github.com/sanjayriram44/Backtest_engine" target="_blank" class="project-link">GITHUB ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-header">
+                <h2 class="section-title">ABOUT</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-left">
+                    <p class="about-lead">I care about building AI systems that actually work in production — not demos.</p>
+                </div>
+                <div class="about-right">
+                    <p class="about-desc">CS/CE student at Purdue University, graduating Dec 2027. I've spent the last year shipping production AI at EY and Boxsy, and this summer I'm at Rox building revenue agents. My work sits at the intersection of applied ML, systems design, and the infrastructure that makes LLMs reliable at scale.</p>
+                    <ul class="about-facts">
+                        <li class="fact-item">
+                            <span class="fact-label">CURRENTLY</span>
+                            <span class="fact-value">Rox &nbsp;·&nbsp; Engineering Intern</span>
+                        </li>
+                        <li class="fact-item">
+                            <span class="fact-label">EDUCATION</span>
+                            <span class="fact-value">Purdue University, CE/CS &nbsp;·&nbsp; Dec 2027</span>
+                        </li>
+                        <li class="fact-item">
+                            <span class="fact-label">FOCUS</span>
+                            <span class="fact-value">LLM systems, agents, ML infra</span>
+                        </li>
+                        <li class="fact-item">
+                            <span class="fact-label">LOCATION</span>
+                            <span class="fact-value">West Lafayette, IN</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2 class="section-title">CONTACT</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <h2 class="contact-heading">Let's<br>talk.</h2>
+                </div>
+                <div class="contact-right">
+                    <ul class="contact-links">
+                        <li><a href="mailto:sanjaysriram44@gmail.com">sanjaysriram44@gmail.com ↗</a></li>
+                        <li><a href="https://www.linkedin.com/in/sanjaysriram44/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sanjaysriram44 ↗</a></li>
+                        <li><a href="https://github.com/sanjayriram44" target="_blank" rel="noopener noreferrer">github.com/sanjayriram44 ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-left">Sanjay Sriram &nbsp;·&nbsp; 2026</div>
+        </footer>
+    </div>
+</body>
+</html>
