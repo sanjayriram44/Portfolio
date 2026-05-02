@@ -27,11 +27,8 @@ body {
 
 /* Layout */
 .container {
-    max-width: 1280px;
-    margin: 0 auto;
+    width: 100%;
     position: relative;
-    border-left: 0.5px solid var(--border-color);
-    border-right: 0.5px solid var(--border-color);
 }
 
 /* Typography */
@@ -75,7 +72,7 @@ h2, h3 {
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--text-primary); /* Brightened from muted */
 }
 
 .tag {
@@ -182,18 +179,6 @@ h2, h3 {
     margin-bottom: 32px;
 }
 
-.hero-link {
-    display: inline-block;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--text-primary);
-    padding-bottom: 4px;
-}
-
 /* Sections */
 .section {
     border-bottom: 0.5px solid var(--border-color);
@@ -231,11 +216,28 @@ h2, h3 {
     background-color: var(--surface);
 }
 
+.exp-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .exp-year {
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.12em;
     color: var(--text-muted);
+}
+
+.exp-logo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px; /* Optional slight rounding for logos */
+}
+
+.exp-logo-large {
+    width: 180px;
 }
 
 .exp-header {
@@ -486,11 +488,21 @@ h2, h3 {
 @media (max-width: 900px) {
     .hero {
         flex-direction: column;
-        gap: 48px;
+        padding: 48px 24px;
+        gap: 24px;
+    }
+    .hero-left {
+        gap: 32px;
+    }
+    .hero-text-main {
+        font-size: 80px;
     }
     .vertical-text {
+        font-size: 80px;
         writing-mode: horizontal-tb;
         transform: none;
+        margin-right: 0;
+        margin-top: 16px;
     }
     .about-grid, .contact-grid, .projects-grid {
         grid-template-columns: 1fr;
@@ -498,30 +510,57 @@ h2, h3 {
     .about-left, .contact-left {
         border-right: none;
         border-bottom: 0.5px solid var(--border-color);
+        padding: 48px 24px;
     }
-    .project-card:nth-child(even) {
-        border-right: 0.5px solid var(--border-color);
+    .about-right, .contact-right {
+        padding: 48px 24px;
     }
     .project-card {
+        padding: 48px 24px;
         border-right: none !important;
         border-bottom: 0.5px solid var(--border-color) !important;
+        min-height: auto;
     }
     .project-card:last-child {
         border-bottom: none !important;
     }
     .experience-item {
         grid-template-columns: 1fr;
-        gap: 16px;
-    }
-    .hero {
         padding: 48px 24px;
+        gap: 24px;
+    }
+    .section-header {
+        padding: 24px;
     }
     .nav {
-        padding: 24px;
         flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
         gap: 24px;
+    }
+    .nav-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
     }
     .contact-heading {
         font-size: 64px;
+    }
+    .about-lead {
+        font-size: 32px;
+    }
+    .fact-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 24px;
+        text-align: center;
     }
 }
