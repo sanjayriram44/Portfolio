@@ -23,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -59,14 +60,22 @@ ul {
   list-style: none;
 }
 
-/* Nav: crisp black links in Space Grotesk matching name, clean flex spacing without separator dots */
+/* Sticky Nav: stays pinned at top with subtle backdrop blur */
+.topnav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(243, 239, 230, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
 .topnav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 64px;
+  padding: 22px 0;
 }
 
 .navlinks {
@@ -95,6 +104,7 @@ ul {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 52px;
+  padding-top: 56px;
   padding-bottom: 80px;
   align-items: center;
 }
@@ -328,7 +338,7 @@ section {
   line-height: 1.55;
   color: var(--ink);
   opacity: 0.88;
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
 
 /* Contact Links: explicitly scoped to #contact */
@@ -363,10 +373,7 @@ footer.page-footer {
 
 @media (max-width: 720px) {
   .topnav {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 24px 0;
+    padding: 16px 0;
   }
   .navlinks {
     gap: 16px;
@@ -374,6 +381,7 @@ footer.page-footer {
   .hero {
     grid-template-columns: 1fr;
     gap: 32px;
+    padding-top: 36px;
   }
   .line-item {
     grid-template-columns: 1fr;

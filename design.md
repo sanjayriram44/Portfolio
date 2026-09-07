@@ -32,7 +32,7 @@
 
 ## Layout & Components
 - **Container:** Max-width 1040px, centered with 40px horizontal padding
-- **Topnav:** All links in crisp Black (`#1F2E27`) using Space Grotesk (`var(--font-heading)`) with clean 24px flex spacing (no separator dots)
+- **Topnav:** Sticky navigation bar (`position: sticky; top: 0; z-index: 1000`) with subtle translucent background (`rgba(243, 239, 230, 0.92)` + `backdrop-filter: blur(12px)`) and bottom line (`#DFD9CE`), remaining permanently accessible on scroll. Smooth scroll offset (`scroll-padding-top: 80px`). All links in crisp Black (`#1F2E27`) using Space Grotesk (`var(--font-heading)`) with clean 24px flex spacing (no separator dots)
   - Left side: Resume
   - Right side: Experience · Research · Projects · Contact
 - **Hero:** 2-column layout (260px left, 1fr right)
@@ -65,7 +65,7 @@
       5. Glimpse (`https://github.com/sanjayriram44/glimpse`)
     - Right column:
       - Category kicker in Signature Blue (`#16337F`, 11.5px bold uppercase)
-      - Paragraph description and tech pills
+      - Paragraph description (tags removed for a minimal, editorial layout)
   - **Contact:** Clean row-based layout for:
     - Email: `sanjaysriram44@gmail.com`
     - LinkedIn: `https://www.linkedin.com/in/sanjaysriram44/`

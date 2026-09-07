@@ -28,7 +28,10 @@
       --font-body: 'Plus Jakarta Sans', 'Core Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
     body {
       margin: 0;
       background: var(--paper);
@@ -42,14 +45,21 @@
     p { margin: 0; }
     ul { margin: 0; padding: 0; list-style: none; }
 
-    /* Nav: crisp black links in Space Grotesk matching name, clean flex spacing without separator dots */
+    /* Sticky Nav: stays pinned at top with subtle backdrop blur */
+    .topnav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(243, 239, 230, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
     .topnav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 40px 0;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 64px;
+      padding: 22px 0;
     }
     .navlinks {
       font-family: var(--font-heading);
@@ -75,6 +85,7 @@
       display: grid;
       grid-template-columns: 260px 1fr;
       gap: 52px;
+      padding-top: 56px;
       padding-bottom: 80px;
       align-items: center;
     }
@@ -271,7 +282,7 @@
       line-height: 1.55;
       color: var(--ink);
       opacity: 0.88;
-      margin-bottom: 14px;
+      margin-bottom: 0;
     }
 
     /* Contact Links: explicitly scoped to #contact */
@@ -305,13 +316,10 @@
 
     @media (max-width: 720px) {
       .topnav {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-        padding: 24px 0;
+        padding: 16px 0;
       }
       .navlinks { gap: 16px; }
-      .hero { grid-template-columns: 1fr; gap: 32px; }
+      .hero { grid-template-columns: 1fr; gap: 32px; padding-top: 36px; }
       .line-item { grid-template-columns: 1fr; gap: 16px; }
       .role-header { flex-direction: column; align-items: flex-start; gap: 4px; }
       .role-meta { text-align: left; align-items: flex-start; }
@@ -320,19 +328,23 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="topnav">
-      <div class="nav-left navlinks">
-        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-      </div>
-      <div class="nav-right navlinks">
-        <a href="#experience">Experience</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <header class="topnav-wrap">
+    <div class="container">
+      <nav class="topnav">
+        <div class="nav-left navlinks">
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
+        <div class="nav-right navlinks">
+          <a href="#experience">Experience</a>
+          <a href="#research">Research</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
     </div>
+  </header>
 
+  <div class="container">
     <div class="hero">
       <img src="profile.jpg" alt="Sanjay Sriram" class="portrait">
       <div class="hero-right">
@@ -451,7 +463,6 @@
         <div>
           <div class="kicker">Static &amp; Dynamic Security Scanner for Local MCP Servers</div>
           <p class="desc">A CLI and terminal UI security auditor for local Model Context Protocol (MCP) servers. Combines dual-engine static analysis (Semgrep AST/taint analysis and LLM-powered tool poisoning/shadowing detection across W1 to W10 vulnerability taxonomies) with dynamic execution analysis inside a Lima VM sandbox. Uses eBPF kernel tracing across cgroups to monitor file, process, and network syscalls, detecting hidden privileges, tool hijacks, and leaking environment/file canaries in JSON-RPC responses.</p>
-          <div class="tag-row"><span>Python</span><span>eBPF</span><span>Semgrep</span><span>MCP</span><span>Cybersecurity</span><span>Lima VM</span></div>
         </div>
       </div>
 
@@ -462,7 +473,6 @@
         <div>
           <div class="kicker">Small Language Model Pretraining for $60</div>
           <p class="desc">Pretrained a 320M-parameter transformer on 10.4B tokens using GQA, SwiGLU, RoPE, and a WSD learning rate schedule, for about $50 on a rented H100. Diagnosed weak performance on PIQA and ARC-easy and ran a targeted $1 mid-training pass mixing replay data with reasoning-focused sources, raising PIQA from 55.5 to 67.7 and ARC-easy from 37.7 to 56.4. Fine-tuned on SmolTalk for a total cost of $60, beating GPT-2 on ARC-easy and ARC-challenge at a comparable token budget.</p>
-          <div class="tag-row"><span>PyTorch</span><span>Transformers</span><span>CUDA</span></div>
         </div>
       </div>
 
@@ -473,7 +483,6 @@
         <div>
           <div class="kicker">Multimodal Local Search Engine</div>
           <p class="desc">A high-performance local retrieval engine for instant semantic search across text, images, audio, and video. Backbone is Qwen3-VL-Embedding-2B, mapping all modalities into a unified 2048-dim vector space. Audio is handled via a CLAP-to-Qwen adapter, a learned 2-layer MLP trained with contrastive InfoNCE loss on AudioSetCaps. A filesystem watchdog daemon auto-indexes files using BLAKE3 change detection, and results are bundled via hybrid scoring combining embedding similarity, temporal proximity, and filename Jaccard.</p>
-          <div class="tag-row"><span>Qwen3-VL</span><span>CLAP</span><span>Qdrant</span></div>
         </div>
       </div>
 
@@ -484,7 +493,6 @@
         <div>
           <div class="kicker">Custom CUDA + Triton Benchmarking</div>
           <p class="desc">A GPU kernel fusion study, fusing element-wise Add and ReLU into a single kernel to eliminate the global memory round-trip between operations. Benchmarked custom CUDA, Triton, and torch.compile on NVIDIA Nsight Systems. Profiling showed torch.compile via Triton reads inputs once into SRAM, computes add and clamp, and writes once to VRAM, rivaling hand-written CUDA while bypassing the memory bandwidth bottleneck entirely.</p>
-          <div class="tag-row"><span>CUDA</span><span>Triton</span><span>Nsight</span></div>
         </div>
       </div>
 
@@ -495,7 +503,6 @@
         <div>
           <div class="kicker">AI Newsletter Digest SaaS</div>
           <p class="desc">A full-stack SaaS that ingests Gmail newsletters and delivers a single AI-generated daily digest with audio playback. Celery orchestrates parallel summarization, processing multiple newsletters concurrently before synthesizing them into a cohesive narrative. Shipped with ElevenLabs TTS, daily email delivery, and 23+ production deploys.</p>
-          <div class="tag-row"><span>Gemini</span><span>Celery</span><span>ElevenLabs</span></div>
         </div>
       </div>
     </section>
